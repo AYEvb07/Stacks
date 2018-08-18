@@ -1,57 +1,38 @@
 <!-- add navigation links to this file -->
 <!-- Favicon -->
-	<link rel="shortcut icon" type="image/jpg" href="/favicon.ico"/>
-	<link rel="shortcut icon" type="image/jpg" href="../final_project/app/assets/images/favicon.ico"/>
+<!-- 	<link rel="shortcut icon" type="image/jpg" href="/favicon.ico"/>
+	<link rel="shortcut icon" type="image/jpg" href="../final_project/app/assets/images/favicon.ico"/> -->
 
 <!-- add navigation links to this file -->
-	<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav mr-auto">
-				<li class:"nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >Basecamp</a>
-							
-						</a>
-						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-<!-- 							<%= link_to 'Dashboard', dashboard_path, class:"dropdown-item" %>
-							<%= link_to 'Quizzes', dental_path, class:"dropdown-item" %>
-							<%= link_to 'Assignments', education_path, class:"dropdown-item" %>
-							<%= link_to 'Grades', root_path, class:"dropdown-item" %> -->
-						</div>
-					</li>
-					<li class="nav-item active">
-						 <!-- <a class="nav-link" href="/">HOME <span class="sr-only">(current)</span></a> -->
-						<%= link_to 'DMs', DM_path, class: 'nav-link' %>
-					</li>
-					<li class:"nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >The Stacks</a>
-							
-						</a>
-						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<%= link_to 'Lecture Slides', slides_path, class:"dropdown-item" %>
-							<%= link_to 'Resource Library', library_path, class:"dropdown-item" %>
-							<%= link_to 'Professional Development', professional_path, class:"dropdown-item" %>
-							<%= link_to 'Daily Bites', bites_path, class:"dropdown-item" %>
-						</div>
-					</li>
-					<li class="nav-item">
-						<%= link_to 'Surveys', surveys_path, class: 'nav-link' %>
-					</li>
-								
-					<li class="nav-item">
-						<%= link_to 'Newsfeed', newsfeed_path, class: 'nav-link' %>
-					</li>
-                     <li class="nav-item">
-						<%= link_to 'About Us', team_path, class: 'nav-link' %>
-					</li>
-						
-                    
-			</div>
-					<!-- <li class="nav-item">
-						<a class="nav-link disabled" href="#">Disabled</a>
-					</li> -->
-				<!--<form class="form-inline">
-								<div class="input-group">
-									<div class="input-group-prepend">
-									</div>
-									<input type="text" class="form-control" placeholder="Search" aria-label="Search">
-								</div> 
-							</form> -->
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >Basecamp</a>
+    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <li><a href="#">Dashboard</a></li>
+        <li><a href="#">Quizzes</a></li>
+        <li><a href="#">Assignments</a></li>
+        <li><a href="#">Grades</a></li>
+    </ul>
+</li>
+	
+<li class="nav-item dropdown">
+         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >The Stacks</a>
+     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+         <li><a href="#">Lecture Slides</a></li>
+         <li><a href="#">Resource Library</a></li>
+         <li><a href="#">Videos</a></li>
+         <li><a href="#">Professional Development</a></li>
+         <li><a href="#">Daily Bite</a></li>
+     </ul>
+</li>
+      
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">DMs <span class="sr-only"></span></a></li>
+        <li><a href="#">Surveys</a></li>
+        <li><a href="#">Newsfeed</a></li>
+        <li><a href="#">About Us</a></li>
+      </ul>
+      </div>
+    </div>
+					

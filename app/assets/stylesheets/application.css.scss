@@ -19,16 +19,19 @@
 * { 
     box-sizing: border-box; 
     margin:0;
-    padding:0;
+    display: inline-block;
+    
   } 
 
 .navbar{
-    color: #71C8BD!important;
+    background-color: #71C8BD!important;
 }
 
 .nav_img{
     height: 50px !important;
 }
+
+ 
 
 .logo {
       float: center!important;
