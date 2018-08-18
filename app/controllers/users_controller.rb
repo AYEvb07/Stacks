@@ -12,15 +12,14 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
       @user = User.find(params[:id])
-          unless current_user.admin?
-              unless current_user.teacher?
+          unless current_user.teacher?
                   unless @user == current_user
                       redirect_to root_path, :alert => "Access denied."
-                  end
-                end
           end
+      end
   end
 
+    
   # GET /users/new
   def new
     @user = User.new

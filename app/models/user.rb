@@ -13,4 +13,6 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+    
+    accepts_nested_attributes_for :course
 end
