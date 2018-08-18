@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   
   root to: 'static#home'
+  get 'team' => 'static#team'
+
 
   devise_for :users
   resources :users, only: [:index]
