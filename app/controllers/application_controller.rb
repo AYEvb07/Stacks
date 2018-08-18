@@ -3,4 +3,13 @@ class ApplicationController < ActionController::Base
     
     def team
     end 
+    
+   def home
+  end
+    
+  def student_registration
+  end
+    
+  def login
+  end 
 end

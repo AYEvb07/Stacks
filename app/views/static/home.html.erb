@@ -1,1 +1,23 @@
-<h1>~!WeLcOmE To ThE $tAx!~</h1>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-xs-6 push-xs-3">
+		<div class="white-space space-big"></div>
+			<%= image_tag("TheStacks_logo.svg", class:"logo") %>
+		</div>
+<div class="column text-xs-center">
+		<div class="col-xs-6 push-xs-3">
+			<div class="white-space space-medium"></div>
+<div class ="buttons">
+<!-- <a class="btn-blue btn-login" href="login" role="button">Log-In</a> -->
+    <%= link_to "Log-In", new_user_session_path, class: "btn-blue btn-login" %>
+<br>
+<br>
+<!--  <a class="btn-purple btn-register" href="new" role="button">Sign-Up</a> -->
+    <%= link_to "Sign-Up", new_user_registration_path, class: "btn-purple btn-register" %>
+      </div>
+		</div>
+<div class="clearfix"></div>
+
+	</div>
+</div>
+

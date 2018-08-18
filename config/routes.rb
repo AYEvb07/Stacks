@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   
   root to: 'static#home'
   get 'team' => 'static#team'
+  get 'home' => 'static#home'
+  get 'student_registration' => 'static#student_registration'
+   get 'login' => 'login#home'
 
 
   devise_for :users

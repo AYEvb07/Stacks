@@ -38,25 +38,36 @@
       width: 700px!important;
       margin-right: 0px;
       margin-left: 50px;
-      margin-top: 90px;
+      margin-top: 150px;
       margin-bottom: 0px;
   }
+
+.buttons{
+    margin-top: 500px;
+    color: #000000;
+    width: 60px;
+    
+}
 
   .btn-login{
     columns: #000000;
     text-transform: uppercase;
-    font-weight: 700;
-    font-size: 2rem;
+    font-weight: 500;
+    font-size: 3rem;
     letter-spacing: .1rem;
     margin-bottom: 2rem;
+    font-family: Open Sans;
+    color: #000000
   }
   .btn-register{
     color:#000000;
     text-transform: uppercase;
-    font-weight: 700;
-    font-size: 2rem;
+    font-weight: 500;
+    font-size: 3rem;
     letter-spacing: .1rem;
     margin-bottom: 2rem;
+    font-family: Open Sans;
+    color: #000000
   }
   .btn-blue{
     background-color: #71C8BD;
