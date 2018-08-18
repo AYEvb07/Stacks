@@ -1,0 +1,116 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+* { 
+    box-sizing: border-box; 
+    margin:0;
+    padding:0;
+  } 
+
+.navbar{
+    color: #71C8BD!important;
+}
+
+.nav_img{
+    height: 50px !important;
+}
+
+.logo {
+      float: center!important;
+      width: 700px!important;
+      margin-right: 0px;
+      margin-left: 50px;
+      margin-top: 90px;
+      margin-bottom: 0px;
+  }
+
+  .btn-login{
+    columns: #000000;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 2rem;
+    letter-spacing: .1rem;
+    margin-bottom: 2rem;
+  }
+  .btn-register{
+    color:#000000;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 2rem;
+    letter-spacing: .1rem;
+    margin-bottom: 2rem;
+  }
+  .btn-blue{
+    background-color: #71C8BD;
+    padding: 2rem 7rem;
+  }
+
+  .btn-purple{
+    background-color: #978EC4;
+    padding: 2rem 7rem;
+  }
+
+  .hometext{
+      color: #000000;
+      font-family: OpenSans !important;
+      font-size: 18px; 
+      text-align: justify!important;
+      line-height: 1.5rem!important;
+      margin-left: 60px!important;
+      margin-right: 60px!important;
+      margin-top: 50px!important;
+  }
+  
+  .copyright{
+    color: #000000!important;
+    font-family: OpenSans !important;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 10x!important; 
+  }
+
+  /* code for all programs */
+  .pagetitle{
+    text-align: center!important;
+    color: #000000;
+    font-family: Amatic SC !important;
+    margin-top: 150px;
+  }
+  
+  /* 'Meet Our Team' Headshots */
+  .dana-headshot {
+    float: left;
+    margin-right: 20px;
+    align: middle;
+    width: 200px;
+  }
+
+  .arisa-headshot {
+    float: left;
+    margin-right: 20px;
+    align: middle;
+    width: 200px;
+  }
+
+  .chris-headshot {
+    float: left;
+    margin-right: 20px;
+    align: middle;
+    width: 200px;
+  }
+
+  
+  
