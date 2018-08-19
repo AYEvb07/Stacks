@@ -47,6 +47,7 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
     @user = User.new
+    @gh_user = GH_User.new
   end
 
   # GET /users/1/edit
@@ -67,6 +68,19 @@ class UsersController < ApplicationController
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
+      
+    @user.gh_user = User.GH_User.new(user_params)
+      
+    respond_to do |format|
+      if @user.gh_user.save
+        format.html { redirect_to @user.gh_user, notice: 'User was successfully created.' }
+        format.json { render :show, status: :created, location: @user.gh_user }
+      else
+        format.html { render :new }
+        format.json { render json: @user.gh_user.errors, status: :unprocessable_entity }
+      end
+    end
+      
   end
 
   # PATCH/PUT /users/1
