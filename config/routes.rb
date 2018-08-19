@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'team' => 'static#team'
   get 'home' => 'static#home'
   get 'student_registration' => 'static#student_registration'
-   get 'login' => 'login#home'
+  get 'login' => 'login#home'
 
 
   devise_for :users

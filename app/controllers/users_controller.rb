@@ -16,7 +16,31 @@ class UsersController < ApplicationController
                   unless @user == current_user
                       redirect_to root_path, :alert => "Access denied."
           end
+      @user.gh_user = GH_User.find(params[:id])
+          unless @user.gh_user == current_user 
+                  unless @user.gh_user == nil 
+                      redirect_to root_path, :alert => "Access denied"
+          end
       end
+    #include to make http request from controller 
+    require 'net/http'
+    # raw url for external api
+    @url = 'https://api.github.com/user/#{@user}'
+    @rurl = 'https://api.github.com/user/#{@user}/repos'
+    # turn your URL into a URI
+    @uri = URI(@url)
+    # Send and collect the data from an http request to the URI
+    @response = Net::HTTP.get(@uri)
+    # Parse the JSON response
+    # GO TOVIEW TO USE API DATA
+    @data = JSON.parse(@response) # <img src=<%= @avatar_url%> />
+    @repos = JSON.parse(@rurl) # inside view -> <%= @repos.each do |r| %>
+    @organizations_url = JSON.parse(@organizations_url.each)
+    # Coins is specific to this app and not necessary for simply calling an API
+#     @avatar_url = <img src= <%= @user.avatar_url %> />
+    @avatar_url = @data.avatar_url
+    
+    end
   end
 
     
