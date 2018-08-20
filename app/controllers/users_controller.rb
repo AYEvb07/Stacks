@@ -5,7 +5,9 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
+    if current_user.teacher?
     @users = User.all
+    end
   end
 
   # GET /users/1
@@ -25,20 +27,22 @@ class UsersController < ApplicationController
     #include to make http request from controller 
     require 'net/http'
     # raw url for external api
-    @url = 'https://api.github.com/user/#{@user}'
-    @rurl = 'https://api.github.com/user/#{@user}/repos'
+    url = 'https://api.github.com/users/#{@user.gh_name}'
+    rurl = 'https://api.github.com/users/#{@user.gh_name}/repos'
     # turn your URL into a URI
-    @uri = URI(@url)
+    uri = URI(url)
+    ruri = URI(rurl)
     # Send and collect the data from an http request to the URI
-    @response = Net::HTTP.get(@uri)
+    response = Net::HTTP.get(uri)
+    response_two = Net::HTTP.get(ruri)
     # Parse the JSON response
     # GO TOVIEW TO USE API DATA
-    @data = JSON.parse(@response) # <img src=<%= @avatar_url%> />
-    @repos = JSON.parse(@rurl) # inside view -> <%= @repos.each do |r| %>
-    @organizations_url = JSON.parse(@organizations_url.each)
+    @data = JSON.parse(response)# <img src=<%= @avatar_url%> />
+    @repos = JSON.parse(response_two) # inside view -> <%= @repos.each do |r| %>
+    @organizations_url = JSON.parse(response_three)
     # Coins is specific to this app and not necessary for simply calling an API
 #     @avatar_url = <img src= <%= @user.avatar_url %> />
-    @avatar_url = @data.avatar_url
+    @avatar_url =JSON.parse(response_four)
     
     end
   end

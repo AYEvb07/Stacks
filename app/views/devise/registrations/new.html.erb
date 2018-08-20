@@ -20,11 +20,16 @@
     <br>
     <br>
     
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name%>
-  </div>
+<!--      <div class="field">
+       <%= f.label :name %><br />
+    <%= f.text_field :name%> 
+  </div>  -->
 
+    <div class="field">
+    <%= f.label :GitHub %><br />
+    <%= f.text_field :gh_name, autofocus: true, autocomplete: "GitHub" %> 
+  </div>
+    
     <br>
     <br>
     
@@ -33,7 +38,7 @@
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.password_field :password, autocomplete: "new-password" %>
   </div>
 
     <br>
@@ -41,7 +46,7 @@
     
   <div class="field">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
     
   <br>

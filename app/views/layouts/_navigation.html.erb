@@ -22,6 +22,16 @@
                     <%= render 'layouts/navigation_links' %> <!-- All your other links should go in the navigation_links layout file. -->
                 </ul>
             </div>
-        </div>       
+       <ul class="nav-list">
+        <% if user_signed_in? %>
+            <li><%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "link" %></li>
+        <% else %>
+            <li><%= link_to "Sign Up", new_user_registration_path, class: "link" %></li>
+            <li><%= link_to "Log In", new_user_session_path, class: "link" %></li>
+        <% end %>
+        </ul>
+    </div>       
 </nav>
+
+
 
