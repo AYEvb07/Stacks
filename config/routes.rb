@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+  resources :dashboards
+  get 'dashboard/user_dashboard'
+  get 'index' => 'dashboards#index'
+
   root to: 'static#home'
   get 'team' => 'static#team'
   get 'home' => 'static#home'
