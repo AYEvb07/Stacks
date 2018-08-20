@@ -5,43 +5,40 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Course.create({
 
-{
-name: 'I/O Avenue On-Ramp'
-Teacher: 'TBA'
-description: "On-Ramp is a basic computer course'
-},
+Course.create( name: 'I/O Avenue Highway Summer 2018'
+               Teacher: 'Clay Terry'
+                description: "I/O Avenue is a 12 week program that teaches the fundamental skills to become a great software developer."
+                )
 
-{
-name: 'I/O Avenue Highway'
-Teacher: 'Clay Terry'
-description: ' Highway is a 12 week program that teachers the fundamentals of programming'
-}
+User.create(name: 'Christopher Ashby'
+            email: "c@c.com",
+            password: "123456",
+            password_confirmation: "123456",
+            gh_name: "christopherashby",
+            role: 0)
 
-})
+User.create(name: 'Clay Terry'
+            email: "l@test.com",
+            password: "123456",
+            password_confirmation: "123456",
+            gh_name: "lclaytont",
+            role: 1)
 
-Teacher.create ({
+User.create(name: 'Arisa'
+            email: "a@a.com",
+            password: "123456,"
+            password_confirmation: "123456",
+            gh_name: "AYEvb07"
+            role: 0)
 
-{
-name: 'Ryan Kopinsky"
-description: 'Program Director'
-},
+User.create(name: 'Dana'
+            email: "d@d.com"
+            password:"123456"
+            password_confirmation: "123456"
+            gh_name: "DanaLTerry"
+            role: 0)
 
-{
-name:'Enara '
-description:
-},
-
-{
-name: 'Clay Terry'
-description 'Lead Instructor'
-}
-})
-
-User.create(name: 'Christopher Ashby')
-User.create(name: 'Arisa')
-User.create(name: 'Dana')
 User.create(name: 'Keith')
 User.create(name: 'Montrell')
 User.create(name: 'Brandon')
