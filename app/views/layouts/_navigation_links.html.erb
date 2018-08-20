@@ -7,7 +7,7 @@
 <div class="collapse.in navbar-collapse.in" id="navbarSupportedContent">
 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
  <ul class="nav navbar-nav">
-<li class="nav-item dropdown">
+
 	
 <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >The Stacks</a>
@@ -19,16 +19,20 @@
          <li><a href="#">Daily Bite</a></li>
      </ul>
 </li>
-      
-<<<<<<< HEAD
-        <li><%= link_to "Basecamp", team_path, class: "link" %></li>
-=======
+       
         <li><%= link_to "Basecamp", dashboards_path %></li>
->>>>>>> 3e129fab72a592c17496d76f78bd9ad2182949ea
         <li><a href="#">DMs</a></li>
         <li><a href="#">Surveys</a></li>
         <li><a href="#">Newsfeed</a></li>
         <li><%= link_to "About Us", team_path %></li>
+     <ul class="nav-list">
+        <% if user_signed_in? %>
+            <li><%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "link" %></li>
+        <% else %>
+            <li><%= link_to "Sign Up", new_user_registration_path, class: "link" %></li>
+            <li><%= link_to "Log In", new_user_session_path, class: "link" %></li>
+        <% end %>
+        </ul>
       </ul>
       </div>
     </div>

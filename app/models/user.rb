@@ -9,15 +9,14 @@ class User < ApplicationRecord
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  
-  enum role: [:teacher, :student]
+ 
     
   after_initialize :set_default_role, :if => :new_record?
 
   
     
   def set_default_role
-    self.role ||= :student
+    self.role ||= :user
   end
 
   devise :database_authenticatable, :registerable,
