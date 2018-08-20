@@ -1,5 +1,5 @@
 class Course < ApplicationRecord
-    has_many :users 
+#     has_many :users 
     
-    accepts_nested_attributes_for :users
+#     accepts_nested_attributes_for :users
 end

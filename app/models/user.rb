@@ -1,6 +1,6 @@
 class User < ApplicationRecord
 
-  belongs_to :course  
+#   belongs_to :course  
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -18,5 +18,5 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
     
-    accepts_nested_attributes_for :course
+#     accepts_nested_attributes_for :course
 end
