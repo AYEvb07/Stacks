@@ -16,11 +16,11 @@ class UsersController < ApplicationController
                   unless @user == current_user
                       redirect_to root_path, :alert => "Access denied."
           end
-      @user.gh_user = GH_User.find(params[:id])
-          unless @user.gh_user == current_user 
-                  unless @user.gh_user == nil 
-                      redirect_to root_path, :alert => "Access denied"
-          end
+#       @user.gh_user = GH_User.find(params[:id])
+#           unless @user.gh_user == current_user 
+#                   unless @user.gh_user == nil 
+#                       redirect_to root_path, :alert => "Access denied"
+#           end
       end
     #include to make http request from controller 
     require 'net/http'
@@ -47,7 +47,7 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
     @user = User.new
-    @gh_user = GH_User.new
+#     @gh_user = GH_User.new
   end
 
   # GET /users/1/edit
@@ -69,17 +69,17 @@ class UsersController < ApplicationController
       end
     end
       
-    @user.gh_user = User.GH_User.new(user_params)
+#     @user.gh_user = User.GH_User.new(user_params)
       
-    respond_to do |format|
-      if @user.gh_user.save
-        format.html { redirect_to @user.gh_user, notice: 'User was successfully created.' }
-        format.json { render :show, status: :created, location: @user.gh_user }
-      else
-        format.html { render :new }
-        format.json { render json: @user.gh_user.errors, status: :unprocessable_entity }
-      end
-    end
+#     respond_to do |format|
+#       if @user.gh_user.save
+#         format.html { redirect_to @user.gh_user, notice: 'User was successfully created.' }
+#         format.json { render :show, status: :created, location: @user.gh_user }
+#       else
+#         format.html { render :new }
+#         format.json { render json: @user.gh_user.errors, status: :unprocessable_entity }
+#       end
+#     end
       
   end
 
