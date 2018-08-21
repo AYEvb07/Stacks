@@ -1,53 +1,44 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, except: [:index]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index]
 
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    if current_user.teacher?  
+      @users = User.all
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
+      require 'net/http'
+      url = "https://api.github.com/users/#{@user.gh_user_name}"
+      rurl = "https://api.github.com/users/#{@user.gh_user_name}/repos"
+      uri = URI(url)
+      ruri = URI(rurl)
+      response = Net::HTTP.get(uri)
+      response_two = Net::HTTP.get(ruri)
+      @data = JSON.parse(response)
+      @repos = JSON.parse(response_two)
       @user = User.find(params[:id])
-          unless current_user.teacher?
-                  unless @user == current_user
-                      redirect_to root_path, :alert => "Access denied."
-          end
+#           unless current_user.teacher?
+#                   unless @user == current_user
+#                       redirect_to root_path, :alert => "Access denied."
+   
 #       @user.gh_user = GH_User.find(params[:id])
 #           unless @user.gh_user == current_user 
 #                   unless @user.gh_user == nil 
 #                       redirect_to root_path, :alert => "Access denied"
 #           end
-      end
-    #include to make http request from controller 
-    require 'net/http'
-    # raw url for external api
-    @url = 'https://api.github.com/user/#{@user}'
-    @rurl = 'https://api.github.com/user/#{@user}/repos'
-    # turn your URL into a URI
-    @uri = URI(@url)
-    # Send and collect the data from an http request to the URI
-    @response = Net::HTTP.get(@uri)
-    # Parse the JSON response
-    # GO TOVIEW TO USE API DATA
-    @data = JSON.parse(@response) # <img src=<%= @avatar_url%> />
-    @repos = JSON.parse(@rurl) # inside view -> <%= @repos.each do |r| %>
-    @organizations_url = JSON.parse(@organizations_url.each)
-    # Coins is specific to this app and not necessary for simply calling an API
-#     @avatar_url = <img src= <%= @user.avatar_url %> />
-    @avatar_url = @data.avatar_url
+     
     
-    end
   end
 
     
   # GET /users/new
   def new
     @user = User.new
-#     @gh_user = GH_User.new
   end
 
   # GET /users/1/edit
@@ -67,20 +58,7 @@ class UsersController < ApplicationController
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
-    end
-      
-#     @user.gh_user = User.GH_User.new(user_params)
-      
-#     respond_to do |format|
-#       if @user.gh_user.save
-#         format.html { redirect_to @user.gh_user, notice: 'User was successfully created.' }
-#         format.json { render :show, status: :created, location: @user.gh_user }
-#       else
-#         format.html { render :new }
-#         format.json { render json: @user.gh_user.errors, status: :unprocessable_entity }
-#       end
-#     end
-      
+    end     
   end
 
   # PATCH/PUT /users/1
