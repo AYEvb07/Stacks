@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'home' => 'static#home'
   get 'new' => 'static#new'
   get 'login' => 'login#home'
+  get 'dashboards' => 'static#dashboards'
 
 
   devise_for :users

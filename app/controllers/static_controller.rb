@@ -11,4 +11,6 @@ class StaticController < ApplicationController
   def team
   end
     
+  def dashboards
+  end
 end
