@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   def index
     if current_user.teacher?  
       @users = User.all
-
+    end
   end
 
   # GET /users/1
@@ -23,17 +23,6 @@ class UsersController < ApplicationController
       @data = JSON.parse(response)
       @repos = JSON.parse(response_two)
       @user = User.find(params[:id])
-#           unless current_user.teacher?
-#                   unless @user == current_user
-#                       redirect_to root_path, :alert => "Access denied."
-   
-#       @user.gh_user = GH_User.find(params[:id])
-#           unless @user.gh_user == current_user 
-#                   unless @user.gh_user == nil 
-#                       redirect_to root_path, :alert => "Access denied"
-#           end
-
-    
   end
 
     
