@@ -51,14 +51,17 @@
       width: 700px!important;
       margin-right: 0px;
       margin-left: 50px;
-      margin-top: 100px;
+      margin-top: 0px;
       margin-bottom: 0px;
   }
 
 .buttons{
-    margin-top: 500px;
+    margin-top: 350px;
+    margin-right: 0px;
+    margin-left: 0px;
     color: #000000;
     width: 60px;
+    height: 20px;
     
 }
 
@@ -68,7 +71,7 @@
     font-weight: 500;
     font-size: 3rem;
     letter-spacing: .1rem;
-    margin-bottom: 2rem;
+//     margin-bottom: 2rem;
     font-family: Open Sans;
     color: #000000
   }
@@ -78,7 +81,7 @@
     font-weight: 500;
     font-size: 3rem;
     letter-spacing: .1rem;
-    margin-bottom: 2rem;
+//     margin-bottom: 2rem;
     font-family: Open Sans;
     color: #000000
   }
@@ -89,7 +92,7 @@
 
   .btn-purple{
     background-color: #978EC4;
-    padding: 2rem 7rem;
+    padding: 1.5rem 6.5rem;
   }
 
   .hometext{
@@ -103,8 +106,21 @@
       margin-top: 150px!important;
   }
   
+ .dashboardtext{
+      color: #000000;
+      font-family: Open Sans !important;
+      font-size: 18px; 
+      text-align: justify!important;
+      line-height: 2.5rem!important;
+      margin-left: 60px!important;
+      margin-right: 120px!important;
+      margin-top: 150px!important;
+  }
+  
+
 .title{
     align: center;
+    margin-left: 65px;
 }
 
 .box{
