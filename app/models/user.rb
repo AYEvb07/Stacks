@@ -1,9 +1,9 @@
 class User < ApplicationRecord
 
   
-  has_one :dashboard 
+  has_one :dashboard
    
-  belongs_to :course  
+#   belongs_to :course  
   enum role: [:user, :teacher, :admin]
 
 
@@ -23,5 +23,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
     
 
-  
+#     accepts_nested_attributes_for :course
+    accepts_nested_attributes_for :dashboard
 end

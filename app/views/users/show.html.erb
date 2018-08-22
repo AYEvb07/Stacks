@@ -1,4 +1,12 @@
 <p id="notice"><%= notice %></p>
+ 
+<img class= "gh-avatar" src= <%= @data["avatar_url"] %>> 
+<% @repos.each do |repo| %>
+     
+         <div>
+            <p><strong><%= repo["name"] %></strong> | <%= link_to repo["html_url"] %></p>
+         </div>
+
 
 <img class="gh-avatar" src=<%= @data["avatar_url"] %>>
 <% @repos.each do |repo| %>
@@ -8,3 +16,4 @@
 <% end %>
 <%# link_to 'Edit', edit_user_path(@user) %> 
 <%= link_to 'Back', users_path %>
+
